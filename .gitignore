@@ -1,0 +1,11 @@
+#Intellij
+
+.idea/**
+
+
+#Gradle
+
+.gradle/
+.build/
+
+**/build/

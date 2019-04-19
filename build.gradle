@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+allprojects {
+
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    group 'com.owned'
+    version '1.0-SNAPSHOT'
+}
