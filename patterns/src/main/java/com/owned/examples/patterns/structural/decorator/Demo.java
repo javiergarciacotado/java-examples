@@ -1,4 +1,4 @@
-package com.owned.examples.patterns.behavioral.decorator;
+package com.owned.examples.patterns.structural.decorator;
 
 public class Demo {
 
