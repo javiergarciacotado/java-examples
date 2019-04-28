@@ -1,4 +1,4 @@
 rootProject.name = 'java-examples'
 
-include 'patterns'
+include 'patterns', 'frameworks:grpc'
 
