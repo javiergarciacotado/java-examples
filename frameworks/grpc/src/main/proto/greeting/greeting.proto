@@ -20,4 +20,6 @@ message GreetingResponse {
 
 service GreetingService {
     rpc Greet(GreetingRequest) returns (GreetingResponse) {};
+
+    rpc GreetStreamServer(GreetingRequest) returns (stream GreetingResponse) {};
 }
