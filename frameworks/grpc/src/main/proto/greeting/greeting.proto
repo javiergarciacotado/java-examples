@@ -19,7 +19,13 @@ message GreetingResponse {
 }
 
 service GreetingService {
+
+//    Unary
     rpc Greet(GreetingRequest) returns (GreetingResponse) {};
 
+//    Server streaming
     rpc GreetStreamServer(GreetingRequest) returns (stream GreetingResponse) {};
+
+//    Client streaming
+    rpc GreetStreamClient(stream GreetingRequest) returns (GreetingResponse) {};
 }

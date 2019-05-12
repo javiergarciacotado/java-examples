@@ -51,4 +51,30 @@ public class GreetingServiceImpl extends GreetingServiceImplBase {
 
         responseObserver.onCompleted();
     }
+
+    @Override
+    public StreamObserver<GreetingRequest> greetStreamClient(StreamObserver<GreetingResponse> responseObserver) {
+        return new StreamObserver<GreetingRequest>() {
+
+            String result = "";
+
+            @Override
+            public void onNext(GreetingRequest greetingRequest) {
+//                Client sends a message
+                result += " Hello " + greetingRequest.getGreeting().getFirstName() + "!";
+            }
+
+            @Override
+            public void onError(Throwable t) {
+//                Client sends an error
+            }
+
+            @Override
+            public void onCompleted() {
+//                Client is done - server can answer whenever it considers done processing client request
+                responseObserver.onNext(GreetingResponse.newBuilder().setResult(result).build());
+                responseObserver.onCompleted();
+            }
+        };
+    }
 }
